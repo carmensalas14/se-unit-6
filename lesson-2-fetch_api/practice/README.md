@@ -1,11 +1,12 @@
 # Lesson 6.2 Practice: XHR vs. Fetch, Get Requests, & Promises
-
 ## Directions
 Respond to written responses directly in this markdown file. Use `practice.js` for coding challenge solutions.
 
 **1. Which portion of this URL is the query string? What is the purpose of the query string in this particular example?**
   `'https://itunes.apple.com/search?artist=Janelle%20Monáe'`
-
+  
+  - '?artist=Janelle%20Monáe' is the query string in this link. The purpose of the query string is to be more specific about what part of the page you want to visit. 
+  
 **2. Reference the code snippet below. Why would an engineer decide to create the higher order function `sendHttpRequest()` and then invoke it within `getData()` and `sendData()`?
 
 	```javascript

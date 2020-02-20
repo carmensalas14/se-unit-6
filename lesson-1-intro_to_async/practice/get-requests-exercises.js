@@ -50,7 +50,27 @@ const response1 = `
  * response object.
  */
 
-const logUsers = null; //Replace null with your solution code to exercise 2
+// const getUsers = (number) => {
+//     const getData = fetch(`https://randomuser.me/api/?results=${number}`);
+//     return getData
+//         .then(response => response.json())
+//         .then(data => console.log(data.results))
+
+// };
+
+const getUsers = async(number) => {
+    const getData = await (await (fetch(`https://randomuser.me/api/?results=${number}`))).json();
+    console.log(getData)
+    return getData
+}
+console.log(getUsers(10));
+
+const logUsers = (num) => {
+    getUsers(num)
+        .then(data => console.log(data.results))
+}
+
+//Replace null with your solution code to exercise 2
 
 /**
  * Exercise 3:
@@ -61,7 +81,10 @@ const logUsers = null; //Replace null with your solution code to exercise 2
  * 2. number each of the names from 1-10.
  */
 
-const listTenNames = null; //Replace null with your solution code to exercise 3
+const listTenNames = () => {
+    getUsers().then()
+}
+//Replace null with your solution code to exercise 3
 
 /**
  * Exercise 4:
@@ -74,7 +97,9 @@ const listTenNames = null; //Replace null with your solution code to exercise 3
  *
  */
 
-const createPhoneBook = null; //Replace null with your solution code to exercise 4
+const createPhoneBook = () => {
+
+} //Replace null with your solution code to exercise 4
 
 /**
  * Exercise 5:
@@ -94,7 +119,29 @@ const createPhoneBook = null; //Replace null with your solution code to exercise
  * with multiple parameters
  */
 
-const createPhotoAlbum = null; //Replace null with your solution code to exercise 5
+const createPhotoAlbum = (gender, nat) => {
+    const url = `https://randomuser.me/api/?gender=${gender}&nat=${nat}=$`
+    const tbody = document.createElement('tbody');
+    table.tbody
+    
+    document.getElementById('main').appendChild(table);
+    
+    fetch(url)
+    .then(response => response.json())
+    .then(json => json.results.map(users =>{
+        return `
+        <tr>
+            <td>${user.name.first} ${user.name.last}</td>
+            <td><img src='${user.picture.medium}'></td>
+        </tr>
+        `
+    }).join('')
+    )
+    
+}
+console.log(createPhotoAlbum())
+
+//Replace null with your solution code to exercise 5
 
 /**
  * For exercises 6-7, use the `Joke API` and
@@ -115,7 +162,11 @@ const createPhotoAlbum = null; //Replace null with your solution code to exercis
  * 2) log the setup and delivery of the joke on separate lines
  */
 
-const logAJoke = null; //Replace null with your solution code to exercise 6
+const logAJoke = () => {
+    const getData = fetch(` https://sv443.net/jokeAPI/v2/joke/Programming?type=twopart`);
+    getData.then(response => response.json())
+}
+//Replace null with your solution code to exercise 6
 
 /**
  * Exercise 7:
